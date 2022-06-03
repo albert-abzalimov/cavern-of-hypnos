@@ -15,12 +15,6 @@ public class playerMovement : MonoBehaviour
     public SpriteRenderer theSR;
     private bool movingBackwards;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
