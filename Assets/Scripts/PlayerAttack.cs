@@ -21,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
     }
 
     void Attack(){
-        Collider[] hitColliders = Physics.OverlapSphere(stats.attackPoint.position, stats.attackRadius);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, stats.attackRadius);
         foreach (var colliderHit in hitColliders){
             if (colliderHit.CompareTag("Enemy")){
                 colliderHit.gameObject.GetComponent<Enemy>().TakeDamage(stats.attackDamage);
