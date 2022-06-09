@@ -16,12 +16,6 @@ public class PlayerStats : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void TakeDamage(int amountDmg){
         Debug.LogWarning("TOOK DAMAGE");
         health -= amountDmg;

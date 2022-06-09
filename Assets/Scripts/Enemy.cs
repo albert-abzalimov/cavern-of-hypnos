@@ -15,18 +15,20 @@ public class Enemy : MonoBehaviour
     [Header("Movement Stuff")]
     public Transform target;
     public float speed = 4f;
+    public float knockback = 5f;
+    public float knockback_time = 1f;
     public float stoppingDistance = 10f;
     Vector3 target_pos;
     Rigidbody rb;
 
     bool attacking;
+    bool takingDamage;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
-
     void Update(){
         // make enemy move towards the player
         transform.LookAt(target);
@@ -34,10 +36,13 @@ public class Enemy : MonoBehaviour
 
         // stop at a certain distance
         float distance = Vector3.Distance(transform.position, target.position);
-        if (distance <= attackRange && !attacking){
+        if (distance <= attackRange && !attacking && !takingDamage){
             StartCoroutine("startAttacking");
         }
-        if (distance > stoppingDistance && !attacking)
+        if (attacking && !takingDamage){
+            rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
+        }
+        if (distance > stoppingDistance && !attacking && !takingDamage)
             rb.MovePosition(target_pos);
     }
 
@@ -48,6 +53,14 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(attackTime);
         Debug.Log("attack now!");
         TryAttacking();
+    }
+
+    IEnumerator TakeKnockback(){
+        takingDamage = true;
+        rb.isKinematic = false;
+        rb.AddForce(Vector3.up * knockback);
+        yield return new WaitForSeconds(knockback_time);
+        takingDamage = false;
     }
 
 
@@ -73,6 +86,9 @@ public class Enemy : MonoBehaviour
         if (health <= 0){
             Debug.Log("enemy died");
             gameObject.SetActive(false);
+        }
+        else{
+            StartCoroutine("TakeKnockback");
         }
     }
 
