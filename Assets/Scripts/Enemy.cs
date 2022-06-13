@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Random = System.Random;
 using UnityEngine;
 using UnityEngine.AI;
 public class Enemy : MonoBehaviour
@@ -23,6 +24,8 @@ public class Enemy : MonoBehaviour
 
     bool attacking;
     bool takingDamage;
+
+    static Random rand = new Random();
 
     // Start is called before the first frame update
     void Start()
@@ -72,12 +75,13 @@ public class Enemy : MonoBehaviour
     }
 
     public void TakeDamage(int amountDmg){
+    
         Debug.Log("We took damage");
         if (armor > 0){
             armor -= amountDmg;
             if (armor < 0){
                 // the armor broke so we take some more damage to health
-                health -= armor;
+                health += armor;
             }
         }
         else {
@@ -85,6 +89,16 @@ public class Enemy : MonoBehaviour
         }
         if (health <= 0){
             Debug.Log("enemy died");
+
+            //Health Drop
+            if (rand.Next(2) == 0){
+                //Drop Health
+            }
+            //Shield Drop
+            if (rand.Next(2) == 0){
+                //Drop Health
+            }
+
             gameObject.SetActive(false);
         }
         else{
