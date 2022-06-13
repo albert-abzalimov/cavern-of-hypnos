@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using Random = System.Random;
 using UnityEngine;
 using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
-
     public int health = 3;
     public int armor = 0;
+    public GameObject Dropped;
     public float attackRange = 5f;
     public int attackDamage = 1;
     public float attackTime = 2f;
@@ -25,12 +24,12 @@ public class Enemy : MonoBehaviour
     bool attacking;
     bool takingDamage;
 
-    static Random rand = new Random();
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        target = FindObjectOfType<PlayerStats>().gameObject.transform;
     }
     void Update(){
         // make enemy move towards the player
@@ -48,7 +47,6 @@ public class Enemy : MonoBehaviour
         if (distance > stoppingDistance && !attacking && !takingDamage)
             rb.MovePosition(target_pos);
     }
-
     IEnumerator startAttacking(){
         attacking = true;
         Debug.Log("started attacking");
@@ -66,14 +64,12 @@ public class Enemy : MonoBehaviour
         takingDamage = false;
     }
 
-
     void TryAttacking(){
         if (Physics.CheckSphere(transform.position, attackRange, playerLayer) && attacking){
             target.gameObject.GetComponent<PlayerStats>().TakeDamage(attackDamage);
         }
         attacking = false;
     }
-
     public void TakeDamage(int amountDmg){
     
         Debug.Log("We took damage");
@@ -88,17 +84,10 @@ public class Enemy : MonoBehaviour
             health -= amountDmg;
         }
         if (health <= 0){
-            Debug.Log("enemy died");
-
-            //Health Drop
-            if (rand.Next(2) == 0){
-                //Drop Health
+            if (Random.Range(0, 6) == 0){
+                // spawn a dropper
+                Instantiate(Dropped, transform.position, Quaternion.identity);
             }
-            //Shield Drop
-            if (rand.Next(2) == 0){
-                //Drop Health
-            }
-
             gameObject.SetActive(false);
         }
         else{
@@ -106,7 +95,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos(){
+    void OnDrawGizmosSelected(){
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
