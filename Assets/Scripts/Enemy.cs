@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public int health = 3;
     public int armor = 0;
     public GameObject Dropped;
+    public GameObject blood_particle;
     public float attackRange = 5f;
     public int attackDamage = 1;
     public float attackTime = 2f;
@@ -88,7 +89,7 @@ public class Enemy : MonoBehaviour
                 // spawn a dropper
                 Instantiate(Dropped, transform.position, Quaternion.identity);
             }
-            gameObject.SetActive(false);
+            StartCoroutine("die");
         }
         else{
             StartCoroutine("TakeKnockback");
@@ -97,5 +98,10 @@ public class Enemy : MonoBehaviour
 
     void OnDrawGizmosSelected(){
         Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+    IEnumerator die(){
+        Instantiate(blood_particle, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
     }
 }

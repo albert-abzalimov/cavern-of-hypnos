@@ -57,6 +57,8 @@ public class PlayerStats : MonoBehaviour
                 // get more armor 
                 armor++;
             }
+            health_ui.text = "Health: " + health;
+            armor_ui.text = "Armor: " + armor;
             Destroy(other.gameObject);
         } 
         else if (other.CompareTag("Void")){

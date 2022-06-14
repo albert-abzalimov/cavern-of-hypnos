@@ -1942,6 +1942,63 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.197412, y: 12.796662, z: 10.052106}
   m_Center: {x: -0.15906332, y: 5.898539, z: -0.021160442}
+--- !u!1001 &900116774652030383
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 900116776048917938, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 900116776048917938, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 172.89111
+      objectReference: {fileID: 0}
+    - target: {fileID: 900116776048917938, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 626.7691
+      objectReference: {fileID: 0}
+    - target: {fileID: 900116776048917938, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.184326
+      objectReference: {fileID: 0}
+    - target: {fileID: 900116776048917938, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 900116776048917938, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 900116776048917938, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 900116776048917938, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 900116776048917938, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 900116776048917938, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 900116776048917938, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 900116776048917941, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
+      propertyPath: m_Name
+      value: ParticleBlood
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
 --- !u!1001 &3869487202301963996
 PrefabInstance:
   m_ObjectHideFlags: 0
