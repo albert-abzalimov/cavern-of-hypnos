@@ -6,6 +6,7 @@ public class camCont2 : MonoBehaviour {
 
     public GameObject player;        //Public variable to store a reference to the player game object
 
+    bool look_back = false;
 
     private Vector3 offset;            //Private variable to store the offset distance between the player and camera
 
@@ -21,5 +22,20 @@ public class camCont2 : MonoBehaviour {
     {
         // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
         transform.position = player.transform.position + offset;
+    }
+
+    void Update(){
+        if (Input.GetKeyDown(KeyCode.Q)){
+            look_back = !look_back;
+        }
+
+        if (look_back){
+            Quaternion back_angle = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);
+            transform.rotation = back_angle;
+        }
+        else{
+            Quaternion forward_angle = Quaternion.Euler(transform.rotation.x, 0, transform.rotation.z); 
+            transform.rotation = forward_angle;
+        }
     }
 }
