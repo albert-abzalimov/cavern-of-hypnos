@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] PlayerStats stats;
     bool attacking = false;
     float attack_cooldown;
+    public Animator Anim;
 
     void Awake(){
         stats = gameObject.GetComponent<PlayerStats>();
@@ -15,6 +16,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Anim.SetBool("attacking", attacking);
         if (attacking){
             attack_cooldown -= Time.deltaTime;
         }
@@ -29,6 +31,7 @@ public class PlayerAttack : MonoBehaviour
             attack_cooldown = stats.attackSpeed;
         }
     }
+    
 
     void Attack(){
         attacking = true;
@@ -39,8 +42,8 @@ public class PlayerAttack : MonoBehaviour
             }
         }
     }
-
     void OnDrawGizmos(){
         Gizmos.DrawWireSphere(transform.position, stats.attackRadius);
     }
+    
 }
