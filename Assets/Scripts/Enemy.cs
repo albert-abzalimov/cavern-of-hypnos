@@ -65,6 +65,7 @@ public class Enemy : MonoBehaviour
     }
 
     void TryAttacking(){
+        Audio.instance.playSounds(0);
         if (Physics.CheckSphere(transform.position, attackRange, playerLayer) && attacking){
             target.gameObject.GetComponent<PlayerStats>().TakeDamage(attackDamage);
         }
