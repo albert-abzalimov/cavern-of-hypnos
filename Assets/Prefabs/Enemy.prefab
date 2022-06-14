@@ -144,6 +144,7 @@ MonoBehaviour:
   health: 1
   armor: 0
   Dropped: {fileID: 6030521200062105606, guid: ef18f73270de97046a4fbbc4b3bad66f, type: 3}
+  blood_particle: {fileID: 900116776048917941, guid: afbf1bcd952647b40889fb9728fb0ffb, type: 3}
   attackRange: 2
   attackDamage: 1
   attackTime: 2

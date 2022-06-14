@@ -41,7 +41,7 @@ public class PlayerStats : MonoBehaviour
     }
 
     void OnDeath(){
-        Debug.Log("U died haha");
+        Debug.Log("U died haha L bozo");
         gameObject.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -57,6 +57,8 @@ public class PlayerStats : MonoBehaviour
                 // get more armor 
                 armor++;
             }
+            health_ui.text = "Health: " + health;
+            armor_ui.text = "Armor: " + armor;
             Destroy(other.gameObject);
         } 
         else if (other.CompareTag("Void")){
