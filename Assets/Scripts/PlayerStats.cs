@@ -32,7 +32,7 @@ public class PlayerStats : MonoBehaviour
     }
 
     void OnDeath(){
-        Debug.Log("U died haha");
+        Debug.Log("U died haha L bozo");
         gameObject.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

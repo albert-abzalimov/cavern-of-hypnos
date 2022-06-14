@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.067845434, g: 0.27414426, b: 0.48477334, a: 1}
+  m_IndirectSpecularColor: {r: 0.06784551, g: 0.2741443, b: 0.48477334, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3728,6 +3728,64 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 86ba1050784cff24e9526b7477fff87e, type: 3}
   m_PrefabInstance: {fileID: 717286370}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1464710747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1464710748}
+  - component: {fileID: 1464710750}
+  - component: {fileID: 1464710749}
+  m_Layer: 0
+  m_Name: enterCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1464710748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464710747}
+  m_LocalRotation: {x: 0, y: 0.0030368727, z: 0, w: 0.9999954}
+  m_LocalPosition: {x: -1.55, y: -0.5333332, z: 0.9}
+  m_LocalScale: {x: 2.4999995, y: 4, z: 3.5}
+  m_Children: []
+  m_Father: {fileID: 1510378469}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0.348, z: 0}
+--- !u!114 &1464710749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464710747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17b710974cdab04f9e28a7b2f95f7bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingScene: interiorWeaponsShop
+--- !u!65 &1464710750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464710747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.96925277, y: 1.5136364, z: 1.4570427}
+  m_Center: {x: -0.70649546, y: 0.7277085, z: -0.22852135}
 --- !u!4 &1478722666 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 86ba1050784cff24e9526b7477fff87e, type: 3}
@@ -3952,6 +4010,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f37e91b3dcb6b7943b4612028cc904ac, type: 3}
+--- !u!4 &1510378469 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f37e91b3dcb6b7943b4612028cc904ac, type: 3}
+  m_PrefabInstance: {fileID: 1510378468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1550311204
 PrefabInstance:
   m_ObjectHideFlags: 0
