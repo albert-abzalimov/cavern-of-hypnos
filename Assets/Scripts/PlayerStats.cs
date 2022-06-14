@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,12 +8,18 @@ public class PlayerStats : MonoBehaviour
 {
     public int health = 5;
     public int armor = 0;
+    public TextMeshProUGUI health_ui;
+    public TextMeshProUGUI armor_ui;
 
     [Header("Attack")]
     public float attackSpeed = 1f;
     public int attackDamage = 1;
     public float attackRadius = 2f;
 
+    void Start(){
+        health_ui.text = "Health: " + health;
+        armor_ui.text = "Armor: " + armor;
+    }
     public void TakeDamage(int amountDmg){
         Debug.LogWarning("TOOK DAMAGE");
         if (armor > 0){
@@ -25,6 +32,8 @@ public class PlayerStats : MonoBehaviour
         else {
             health -= amountDmg;
         }
+        health_ui.text = "Health: " + health;
+        armor_ui.text = "Armor: " + armor;
         if (health <= 0){
             // You died
             OnDeath();
